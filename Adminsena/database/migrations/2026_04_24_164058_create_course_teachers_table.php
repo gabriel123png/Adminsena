@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('course_teachers', function (Blueprint $table) {
             $table->id();
-            
             $table->unsignedBigInteger('courses_id')->nullable()->unique();
 
             $table->foreign('courses_id')

@@ -18,21 +18,30 @@ return new class extends Migration
             
             $table->unsignedBigInteger('training_centers_id')->nullable()->unique();
 
-            $table->foreign('training_centers_id')
-                ->references('id')
-                ->on('training_centers')
-                ->onDelete('set null')
-                ->onUpdate('set null');
+                $table->foreign('training_centers_id')
+                    ->references('id')
+                    ->on('training_centers')
+                    ->onDelete('set null')
+                    ->onUpdate('set null');
 
             $table->unsignedBigInteger('area_id')->nullable()->unique();
 
-            $table->foreign('area_id')
-                ->references('id')
-                ->on('area')
-                ->onDelete('set null')
-                ->onUpdate('set null');
-                
+                 $table->foreign('area_id')
+                    ->references('id')
+                    ->on('area')
+                    ->onDelete('set null')
+                    ->onUpdate('set null');
+
+            $table->unsignedBigInteger('course_teachers_id')->nullable()->unique();
+
+                $table->foreign('course_teachers_id')
+                    ->references('id')
+                    ->on('course_teachers')
+                    ->onDelete('set null')
+                    ->onUpdate('set null');
+
             $table->timestamps();
+
         });
     }
 

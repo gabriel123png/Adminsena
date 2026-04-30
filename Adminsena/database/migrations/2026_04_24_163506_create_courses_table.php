@@ -33,6 +33,16 @@ return new class extends Migration
                 ->onUpdate('set null');
 
             $table->timestamps();
+            
+            $table->unsignedBigInteger('course_teachers_id')->nullable()->unique();
+
+                $table->foreign('course_teachers_id')
+                    ->references('id')
+                    ->on('course_teachers')
+                    ->onDelete('set null')
+                    ->onUpdate('set null');
+
+            $table->timestamps();
         });
     }
 
