@@ -8,7 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class training_centers extends Model
 {
     use HasFactory;
-    public function teracher (){
-        return $this->hasMany('App\models\teacher');
-    }
+    
 }

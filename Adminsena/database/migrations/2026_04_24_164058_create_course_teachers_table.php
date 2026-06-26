@@ -22,11 +22,11 @@ return new class extends Migration
                 ->onDelete('set null')
                 ->onUpdate('set null');
             
-            $table->unsignedBigInteger('teachers_id')->nullable()->unique();
+            $table->unsignedBigInteger('teacher_id')->nullable()->unique();
 
-            $table->foreign('teachers_id')
+            $table->foreign('teacher_id')
                 ->references('id')
-                ->on('teachers')
+                ->on('teacher')
                 ->onDelete('set null')
                 ->onUpdate('set null');
 

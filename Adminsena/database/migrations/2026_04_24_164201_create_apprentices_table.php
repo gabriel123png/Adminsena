@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('email');
             $table->string('cell number');
 
-            $table->unsignedBigInteger('courses_id')->nullable()->unique();
+            $table->unsignedBigInteger('course_id')->nullable()->unique();
 
-            $table->foreign('courses_id')
+            $table->foreign('course_id')
                 ->references('id')
-                ->on('courses')
+                ->on('course')
                 ->onDelete('set null')
                 ->onUpdate('set null');
             

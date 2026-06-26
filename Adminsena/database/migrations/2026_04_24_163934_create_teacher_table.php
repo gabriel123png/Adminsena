@@ -24,11 +24,11 @@ return new class extends Migration
                     ->onDelete('set null')
                     ->onUpdate('set null');
 
-            $table->unsignedBigInteger('area_id')->nullable()->unique();
+            $table->unsignedBigInteger('areas_id')->nullable()->unique();
 
-                 $table->foreign('area_id')
+                 $table->foreign('areas_id')
                     ->references('id')
-                    ->on('area')
+                    ->on('areas')
                     ->onDelete('set null')
                     ->onUpdate('set null');
 

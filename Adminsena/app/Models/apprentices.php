@@ -8,7 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class apprentices extends Model
 {
     use HasFactory;
-    public function computer(){
-        return $this->hasOne('App\Models\course_computer');
+    
+     public function Computer()
+    {
+        return $this->belongsToMany('App\Models\Computer');
+    }
+
+    public function course()
+    {
+        return $this->belongsToMany('App\Models\Course');
     }
 }

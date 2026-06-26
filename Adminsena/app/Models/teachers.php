@@ -8,14 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class teachers extends Model
 {
     use HasFactory;
-    public function Area (){
-        return $this->hasMany('App\models\Area');
+    public function area()
+    {
+        return $this->belongsTo('App\Models\Area');
     }
 
-    public function training_centers (){
-        return $this->hasMany('App\models\training_centers');
+    public function courses()
+    {
+        return $this->belongsToMany('App\Models\Course');
     }
-    public function courses(){
-        return $this->belongsToMany('App\Models\courses');
+
+    public function trainig_center()
+    {
+        return $this->belongsTo('App\models\Trainig_center');
     }
 }

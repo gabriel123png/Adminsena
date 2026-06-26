@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('course', function (Blueprint $table) {
             $table->id();
-            $table->string('course_numbrer');
+            $table->string('courses_numbrer');
             $table->string('day');
             
-            $table->unsignedBigInteger('area_id')->nullable()->unique();
+            $table->unsignedBigInteger('areas_id')->nullable()->unique();
 
-            $table->foreign('area_id')
+            $table->foreign('areas_id')
                 ->references('id')
-                ->on('area')
+                ->on('areas')
                 ->onDelete('set null')
                 ->onUpdate('set null');
 
