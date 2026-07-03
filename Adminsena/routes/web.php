@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ComputersController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +22,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('product/create',[ProductController::class,'create']);
+Route::get('category/create',[CategoryController::class,'create']);
+Route::post('category/store',[CategoryController::class,'store'])->name('category.store');
+
+Route::get('computer/computador',[ComputersController::class,'computador']);
+Route::get('computer/completado',[ComputersController::class,'completado'])->name('computer.completado');
 Route::post('product/store',[ProductController::class,'store'])->name('product.store');
+Route::get('product/{id}',[ProductController::class,'show'])->name('product.show');
