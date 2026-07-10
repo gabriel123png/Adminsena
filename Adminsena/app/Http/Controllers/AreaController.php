@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class AreaController extends Controller
 {
      public function create()
-    {
-        return view('area.create');
-    }
+{
+    return view('areas.create');
+}
     public function store(Request $request)
     {
         $area = new Area();

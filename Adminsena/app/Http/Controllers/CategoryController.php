@@ -14,7 +14,8 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request)
-    {
+{
+    try {
 
         $category = new Category();
 
@@ -23,5 +24,11 @@ class CategoryController extends Controller
         $category->save();
 
         return $category;
+
+    } catch (\Exception $e) {
+
+        dd($e->getMessage());
+
     }
+}
 }

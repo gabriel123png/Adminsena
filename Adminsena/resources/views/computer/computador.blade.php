@@ -12,7 +12,7 @@
 
 <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
 
-@csrf
+  @csrf
 
 <label>
     Nombre:
