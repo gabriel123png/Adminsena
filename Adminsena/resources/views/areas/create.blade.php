@@ -1,24 +1,50 @@
-@extends('layouts.app')
+@extends('layouts.App')
 
 @section('content')
 
-<h1>Hola hijos</h1>
+<div class="container mt-4">
 
-<form action="{{route('Area.store')}}" method="POST" enctype="multipart/form-data">
+    <h2>Registrar Área</h2>
 
-@csrf
+    @if(session('success'))
 
-<label>
-    Nombre:
-    <br>
-    <input type="text" name="name">
-</label>
-<br>
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
 
+    @endif
 
+    <form action="{{ route('Area.store') }}" method="POST">
 
-<button type="submit">Enviar Formulario:</button>
-</form>
+        @csrf
 
+        <div class="mb-3">
+
+            <label class="form-label">
+                Nombre del Área
+            </label>
+
+            <input
+                type="text"
+                name="name"
+                class="form-control"
+                value="{{ old('name') }}"
+            >
+
+            @error('name')
+                <small class="text-danger">
+                    {{ $message }}
+                </small>
+            @enderror
+
+        </div>
+
+        <button class="btn btn-primary">
+            Guardar
+        </button>
+
+    </form>
+
+</div>
 
 @endsection
