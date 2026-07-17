@@ -10,7 +10,7 @@ class TrainingCentersController extends Controller
 
     public function create()
     {
-        return view('trainig_center.create');
+        return view('TrainingCenters.create');
     }
     public function store(Request $request)
     {

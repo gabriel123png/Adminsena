@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TrainingCentersController;
 use App\Http\Controllers\ComputersController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ApprenticesController;
@@ -25,13 +25,17 @@ Route::get('/', function () {
 });
 
 
-Route::get('category/create',[CategoryController::class,'create']);
-Route::post('category/store',[CategoryController::class,'create'])->name('category.store');
 
-Route::get('computers/computador',[ComputersController::class,'computador']);
-Route::post('computers/computador',[ComputersController::class,'computador'])->name('computer.computador');
+Route::get('/areas/create', [AreaController::class,'create'])->name('areas.create');
 
-Route::get('/Area/create', [AreaController::class, 'create'])->name('Area.create');
-Route::post('/Area/store', [AreaController::class, 'store'])->name('Area.store');
-Route::get('/Apprentices/Admin', [ApprenticesController::class, 'admin'])->name('apprentices.admin');
-Route::post('/Apprentices/registro', [ApprenticesController::class, 'registro'])->name('apprentices.registro');
+Route::post('/areas/store', [AreaController::class,'store'])->name('areas.store');
+
+Route::get('/TrainingCenters/create',[TrainingCentersController::class,'create'])->name('TrainingCenters.create');
+
+Route::post('/TrainingCenters/store',[TrainingCentersController::class,'store'])->name('TrainingCenters/store');
+
+Route::get('/computers/create', [ComputersController::class, 'create'])->name('computers.create');
+Route::post('/computers/store', [ComputersController::class, 'store'])->name('computers.store');
+
+Route::get('/Apprentice/create', [ApprenticeController::class, 'create'])->name('apprentice.create');
+Route::post('/Apprentice/store', [ApprenticeController::class, 'store'])->name('apprentice.store');
